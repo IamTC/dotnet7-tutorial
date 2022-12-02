@@ -1,17 +1,20 @@
 namespace Settings
 {
-    public class MongoDbSetttings
+    public class MONGODBSETTINGS
     {
-        public string Host { get; set; }
-        public int Port { get; set; }
-        public string User { get; set; }
-        public string Password { get; set; }
+        public string HOST { get; set; }
+        public int PORT { get; set; }
+        public string USER { get; set; }
+        public string PASSWORD { get; set; }
+        public string DB {get; set;}
 
         public string ConnectionString
         {
             get
             {
-                return $"mongodb://{User}:{Password}@{Host}:{Port}";
+                var cs = $"mongodb://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}";
+                Console.WriteLine(cs);
+                return cs;
             }
         }
     }

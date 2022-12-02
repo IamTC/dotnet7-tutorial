@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen();
 BsonSerializer.RegisterSerializer(new GuidSerializer(MongoDB.Bson.BsonType.String));
 BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
 
-var mongoDbSetttings = builder.Configuration.GetSection(nameof(MongoDbSetttings)).Get<MongoDbSetttings>();
+var mongoDbSetttings = builder.Configuration.GetSection(nameof(MONGODBSETTINGS)).Get<MONGODBSETTINGS>();
 
 builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
 {
